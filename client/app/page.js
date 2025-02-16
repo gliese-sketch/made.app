@@ -17,7 +17,7 @@ export default function Home() {
         {user ? (
           <>
             <Messages />
-            <Inputs />
+            <Inputs socket={socket} user={user} />
           </>
         ) : (
           <SignUp setUser={setUser} socket={socket} />
