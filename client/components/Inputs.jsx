@@ -7,6 +7,18 @@ function Inputs() {
   const [input, setInput] = useState("");
   const inputFile = useRef(null);
 
+  const onFileUpload = (e) => {
+    const file = e.target.files[0];
+
+    // Convert to base64
+    var reader = new FileReader();
+    reader.onloadend = function () {
+      console.log("RESULT", reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -40,6 +52,7 @@ function Inputs() {
         name="file"
         accept="image/png, image/gif, image/jpeg"
         ref={inputFile}
+        onChange={onFileUpload}
         hidden
       />
 
