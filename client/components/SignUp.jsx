@@ -57,7 +57,7 @@ function SignUp({ setUser, socket }) {
             />
             <div className="flex flex-col">
               <p className="text-md">MADE Room</p>
-              <p className="text-small text-default-500">made.phleebs.tech</p>
+              <p className="text-small text-default-700">made.phleebs.tech</p>
             </div>
           </CardHeader>
           <Divider />
