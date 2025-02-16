@@ -15,7 +15,7 @@ import {
 } from "@heroui/react";
 import { useEffect } from "react";
 
-function SignUp({ setUser }) {
+function SignUp({ setUser, socket }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,6 +33,7 @@ function SignUp({ setUser }) {
     const data = Object.fromEntries(new FormData(e.currentTarget));
 
     // Update parent state
+    socket.emit("user", data.name);
     setUser(data.name);
     sessionStorage.setItem("user", data.name);
   };

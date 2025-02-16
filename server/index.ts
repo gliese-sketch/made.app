@@ -30,6 +30,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("user", (name) => {
+    console.log("New user joined:", name);
     socket.broadcast.emit("new_user", name);
   });
 });
