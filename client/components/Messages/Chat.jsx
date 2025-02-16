@@ -1,10 +1,12 @@
-import { Card, CardBody, Image } from "@heroui/react";
+import { Avatar, Card, CardBody, Image } from "@heroui/react";
 import NewUser from "./NewUser";
 
 function Chat({ message, own }) {
   return (
     <Card className={`w-fit bg-transparent ${own && "bg-emerald-100 ml-auto"}`}>
-      <CardBody>
+      <CardBody className="flex items-center flex-row gap-1">
+        {!own && <Avatar name={message.name.toUpperCase()} />}
+
         {/* For new user */}
         {message.type === "user" && <NewUser name={message.name} />}
 
