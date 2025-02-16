@@ -16,8 +16,8 @@ export default function Home() {
       <div>
         {user ? (
           <>
-            <Inputs />
             <Messages />
+            <Inputs />
           </>
         ) : (
           <SignUp setUser={setUser} socket={socket} />
