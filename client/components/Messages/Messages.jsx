@@ -1,10 +1,11 @@
 import React from "react";
+import Chat from "./Chat";
 
-function Messages({ messages }) {
+function Messages({ messages, id }) {
   return (
-    <div className="h-[90vh]">
+    <div className="h-[90vh] container mx-auto pt-10">
       {messages.map((message, idx) => (
-        <p key={idx}>{message.content}</p>
+        <Chat key={idx} message={message} own={message.id === id} />
       ))}
     </div>
   );

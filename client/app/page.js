@@ -23,7 +23,7 @@ export default function Home() {
       <div>
         {user ? (
           <>
-            <Messages messages={messages} />
+            <Messages messages={messages} id={socket.id} />
             <Inputs socket={socket} user={user} setMessages={setMessages} />
           </>
         ) : (
