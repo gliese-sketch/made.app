@@ -31,6 +31,8 @@ function Inputs() {
         size="lg"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        radius="none"
+        className="rounded-none sm:rounded-md"
       />
 
       <input
@@ -41,7 +43,11 @@ function Inputs() {
         hidden
       />
 
-      <Button className="bg-emerald-300" size="lg" type="submit">
+      <Button
+        className="bg-emerald-300 rounded-none sm:rounded-md"
+        size="lg"
+        type="submit"
+      >
         {input ? <SendHorizonal /> : <UploadIcon />}
       </Button>
     </form>
