@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
-import { Button, Input, user } from "@heroui/react";
+import { Button, Input } from "@heroui/react";
 import { SendHorizonal, UploadIcon } from "lucide-react";
 import React from "react";
 
-function Inputs({ socket, user }) {
+function Inputs({ socket, user, setMessages }) {
   const [input, setInput] = useState("");
   const inputFile = useRef(null);
 
@@ -21,6 +21,7 @@ function Inputs({ socket, user }) {
       };
 
       socket.emit("message", message);
+      setMessages((prevState) => [...prevState, message]);
     };
 
     reader.readAsDataURL(file);
@@ -45,6 +46,7 @@ function Inputs({ socket, user }) {
     };
 
     socket.emit("message", message);
+    setMessages((prevState) => [...prevState, message]);
 
     // Empty input field
     setInput("");

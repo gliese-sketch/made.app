@@ -1,6 +1,6 @@
 import React from "react";
 
-function Messages() {
+function Messages({ messages }) {
   return <div className="h-[90vh]">Messages</div>;
 }
 
