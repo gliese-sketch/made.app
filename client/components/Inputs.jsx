@@ -31,7 +31,7 @@ function Inputs({ socket, user, setMessages }) {
     e.preventDefault();
 
     if (!input) {
-      inputFile.current.click();
+      return inputFile.current.click();
     }
 
     const message = {
