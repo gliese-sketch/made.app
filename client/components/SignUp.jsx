@@ -40,13 +40,13 @@ function SignUp({ setUser, socket }) {
 
   return (
     <div
-      className="bg-lime-100 flex items-center justify-center min-h-screen 
+      className="bg-gradient-to-br from-emerald-200 via-green-100 to-lime-200 flex items-center justify-center min-h-screen 
   w-full"
     >
       {loading ? (
         <Spinner />
       ) : (
-        <Card className="max-w-[300px]">
+        <Card className="max-w-[300px] bg-transparent">
           <CardHeader className="flex gap-3">
             <Image
               alt="maderoom logo"
@@ -73,7 +73,9 @@ function SignUp({ setUser, socket }) {
                 type="text"
                 autoComplete="off"
               />
-              <Button type="submit">Join</Button>
+              <Button type="submit" className="bg-emerald-400">
+                Join
+              </Button>
             </Form>
           </CardBody>
           <Divider />
