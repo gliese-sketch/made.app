@@ -1,6 +1,7 @@
 "use client";
 import { Button, HeroUIProvider } from "@heroui/react";
 import { Inputs, SignUp } from "@/components";
+import { Chat } from "@/components/Messages";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Button>Click me</Button>
         <SignUp />
         <Inputs />
+        <Chat />
       </div>
     </HeroUIProvider>
   );
